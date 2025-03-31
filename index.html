@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gen Wakeup Schedule</title>
+    <style>
+      .is-error {
+        color: red;
+      }
+      #schedule-info {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gen Wakeup Schedule</h1>
+    <h2>Select DB</h2>
+    <form>
+      <input type="file" accept=".db" id="db-selector">
+      <pre id="db-output"></pre>
+    </form>
+    <div id="generate-option" style="display: none;">
+      <h2>Generate Options</h2>
+      <h4>Datasets</h4>
+      <form id="dataset-options">
+        <input type="checkbox" id="from-history" checked>
+        <label for="from-history">History (<span id="history-count">0</span>)</label>
+        <input type="checkbox" id="from-downloads" checked>
+        <label for="from-downloads">Downloads (<span id="downloads-count">0</span>)</label>
+        <input type="checkbox" id="from-local-favorites" checked>
+        <label for="from-local-favorites">Local Favorite (<span id="local-favorites-count">0</span>)</label>
+        <div id="galleries-info">Unique galleries: 0</div>
+      </form>
+      <h4>Schedule Options</h4>
+    <form id="schedule-options">
+      <div>
+        <label for="term-weeks">Total Weeks in Term</label>
+        <input type="number" id="term-weeks" value="20"> Weeks
+      </div>
+      <div>
+        <label for="courses-in-day">Courses in a Day</label>
+        <input type="number" id="courses-in-day" value="10">
+      </div>
+      <div>
+        <label for="course-elapse">Course Elapse</label>
+        <input type="number" id="course-elapse" value="40"> Minutes
+      </div>
+      <div>
+        <label for="break-len">Breaks between course</label>
+        <input type="number" id="break-len" value="10"> Minutes
+      </div>
+      <div>
+        <input type="checkbox" id="allow-repeat" checked>
+        <label for="allow-repeat">Allow repeat when galleries can't fill schedule table</label>
+      </div>
+      <div id="schedule-info"></div>
+    </form>
+    <button id="generate">Generate</button>
+    </div>
+    
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

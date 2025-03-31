@@ -1,0 +1,19 @@
+{
+  "name": "gen-wakeup-sche",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@types/sql.js": "^1.4.9",
+    "sql.js": "^1.13.0"
+  }
+}
